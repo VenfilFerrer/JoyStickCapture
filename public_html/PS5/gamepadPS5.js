@@ -20,7 +20,7 @@ function addgamepad(gamepad) {
     var id = gamepad.id;
     var xbox = id.indexOf("Xbox");
     console.log(gamepad.index + " - " + id + " - " + xbox);
-    if (xbox > -1) {
+//    if (xbox > -1) {
         controllers[gamepad.index] = gamepad;
         var d = document.createElement("div");
         d.setAttribute("id", "controller" + gamepad.index);
@@ -33,11 +33,11 @@ function addgamepad(gamepad) {
         var gen = id.indexOf("Generic");
         var xbox = id.indexOf("Xbox");
         var snes = id.indexOf("Gamepad");
-        if (xbox > -1) {
-            d.setAttribute("class", "Xbox");
-        } else {
-            d.setAttribute("class", "other");
-        }
+//        if (xbox > -1) {
+            d.setAttribute("class", "PS5");
+//        } else {
+//            d.setAttribute("class", "other");
+//        }
         var b = document.createElement("div");
         b.className = "buttons";
         var img = document.createElement("img");
@@ -47,14 +47,15 @@ function addgamepad(gamepad) {
 
         for (var i = 0; i < gamepad.buttons.length; i++) {
             var img = document.createElement("img");
-            img.setAttribute("id", "button" + i);
             if (i == 7) {
-                img.setAttribute("src", "../imagenes/Xbox/rt0.png");
+                img.setAttribute("src", "../imagenes/PS5/rt0.png");
             } else if (i == 6) {
-                img.setAttribute("src", "../imagenes/Xbox/lt0.png");
+                img.setAttribute("src", "../imagenes/PS5/lt0.png");
             } else {
-                img.setAttribute("src", "../imagenes/Xbox/button" + i + ".png");
+                img.setAttribute("src", "../imagenes/PS5/button" + i + ".png");
             }
+            img.c
+            img.setAttribute("id", "button" + i);
             img.className = "button";
             b.appendChild(img);
         }
@@ -79,7 +80,7 @@ function addgamepad(gamepad) {
         document.getElementById("start").style.display = "none";
         document.body.appendChild(d);
         rAF(updateStatus);
-    }
+//    }
 }
 
 function disconnecthandler(e) {
@@ -115,61 +116,78 @@ function updateStatus() {
                 }
                 var pct = Math.round(val * 100) + "%";
 //                b.style.backgroundSize = pct + " " + pct;
+
+
+//                if (i == 6) {
+//                    var despTop6 = +((Math.round(val * 100) * 88 / 100) - 31) * (-1);
+//                    var divButt6 = document.getElementById("divButton6");
+//                    divButt6.setAttribute("style", "top:" + despTop6 + "px;");
+//                    b.style.opacity = "100%";
+//                } else if (i == 7) {
+//                    var despTop7 = +((Math.round(val * 100) * 88 / 100) - 31) * (-1);
+//                    var divButt7 = document.getElementById("divButton7");
+//                    divButt7.setAttribute("style", "top:" + despTop7 + "px;");
+//                    b.style.opacity = "100%";
+//                } else {
+//                    b.style.opacity = pct;
+//                }
                 var percent = Math.round(val * 100);
 
                 if (i == 7) {
                     var img = document.getElementById("button7");
                     if (percent == 0) {
-                        img.setAttribute("src", "../imagenes/Xbox/rt0.png");
+                        img.setAttribute("src", "../imagenes/PS5/rt0.png");
                     } else if (percent > 0 && percent <= 10) {
-                        img.setAttribute("src", "../imagenes/Xbox/rt1.png");
+                        img.setAttribute("src", "../imagenes/PS5/rt1.png");
                     } else if (percent > 10 && percent <= 20) {
-                        img.setAttribute("src", "../imagenes/Xbox/rt2.png");
+                        img.setAttribute("src", "../imagenes/PS5/rt2.png");
                     } else if (percent > 20 && percent <= 30) {
-                        img.setAttribute("src", "../imagenes/Xbox/rt3.png");
+                        img.setAttribute("src", "../imagenes/PS5/rt3.png");
                     } else if (percent > 30 && percent <= 40) {
-                        img.setAttribute("src", "../imagenes/Xbox/rt4.png");
+                        img.setAttribute("src", "../imagenes/PS5/rt4.png");
                     } else if (percent > 40 && percent <= 50) {
-                        img.setAttribute("src", "../imagenes/Xbox/rt5.png");
+                        img.setAttribute("src", "../imagenes/PS5/rt5.png");
                     } else if (percent > 50 && percent <= 60) {
-                        img.setAttribute("src", "../imagenes/Xbox/rt6.png");
+                        img.setAttribute("src", "../imagenes/PS5/rt6.png");
                     } else if (percent > 60 && percent <= 70) {
-                        img.setAttribute("src", "../imagenes/Xbox/rt7.png");
+                        img.setAttribute("src", "../imagenes/PS5/rt7.png");
                     } else if (percent > 70 && percent <= 80) {
-                        img.setAttribute("src", "../imagenes/Xbox/rt8.png");
+                        img.setAttribute("src", "../imagenes/PS5/rt8.png");
                     } else if (percent > 80 && percent <= 90) {
-                        img.setAttribute("src", "../imagenes/Xbox/rt9.png");
+                        img.setAttribute("src", "../imagenes/PS5/rt9.png");
                     } else if (percent > 90) {
-                        img.setAttribute("src", "../imagenes/Xbox/rt100.png");
+                        img.setAttribute("src", "../imagenes/PS5/rt100.png");
                     }
                 } else if (i == 6) {
                     var img = document.getElementById("button6");
                     if (percent == 0) {
-                        img.setAttribute("src", "../imagenes/Xbox/lt0.png");
+                        img.setAttribute("src", "../imagenes/PS5/lt0.png");
                     } else if (percent > 0 && percent <= 10) {
-                        img.setAttribute("src", "../imagenes/Xbox/lt1.png");
+                        img.setAttribute("src", "../imagenes/PS5/lt1.png");
                     } else if (percent > 10 && percent <= 20) {
-                        img.setAttribute("src", "../imagenes/Xbox/lt2.png");
+                        img.setAttribute("src", "../imagenes/PS5/lt2.png");
                     } else if (percent > 20 && percent <= 30) {
-                        img.setAttribute("src", "../imagenes/Xbox/lt3.png");
+                        img.setAttribute("src", "../imagenes/PS5/lt3.png");
                     } else if (percent > 30 && percent <= 40) {
-                        img.setAttribute("src", "../imagenes/Xbox/lt4.png");
+                        img.setAttribute("src", "../imagenes/PS5/lt4.png");
                     } else if (percent > 40 && percent <= 50) {
-                        img.setAttribute("src", "../imagenes/Xbox/lt5.png");
+                        img.setAttribute("src", "../imagenes/PS5/lt5.png");
                     } else if (percent > 50 && percent <= 60) {
-                        img.setAttribute("src", "../imagenes/Xbox/lt6.png");
+                        img.setAttribute("src", "../imagenes/PS5/lt6.png");
                     } else if (percent > 60 && percent <= 70) {
-                        img.setAttribute("src", "../imagenes/Xbox/lt7.png");
+                        img.setAttribute("src", "../imagenes/PS5/lt7.png");
                     } else if (percent > 70 && percent <= 80) {
-                        img.setAttribute("src", "../imagenes/Xbox/lt8.png");
+                        img.setAttribute("src", "../imagenes/PS5/lt8.png");
                     } else if (percent > 80 && percent <= 90) {
-                        img.setAttribute("src", "../imagenes/Xbox/lt9.png");
+                        img.setAttribute("src", "../imagenes/PS5/lt9.png");
                     } else if (percent > 90) {
-                        img.setAttribute("src", "../imagenes/Xbox/lt100.png");
+                        img.setAttribute("src", "../imagenes/PS5/lt100.png");
                     }
                 } else {
 //                    b.style.opacity = pct;
                 }
+
+
                 b.className = "button";
                 if (pressed) {
                     b.className += " pressed";
@@ -185,7 +203,7 @@ function updateStatus() {
             var a = axes[i];
             a.innerHTML = i + ": " + controller.axes[i].toFixed(4);
             a.setAttribute("value", controller.axes[i]);
-            if (d.className == "Xbox") {
+            if (d.className == "PS5") {
                 var ax0 = document.getElementById("xboxAxis0");
                 var val = ax0.value;
 
