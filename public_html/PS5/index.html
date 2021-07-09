@@ -1,63 +1,50 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Mando PS5</title>
-        <script type="text/javascript" src="gamepadPS5.js"></script>
+        <title>Mandos</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="../js/datatables/datatables.min.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <link href="../js/datatables/datatables.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <style>
-            .other{display: none;}
-            .relative{position: relative;}
-            .PS5 .button{position: absolute;left: 24px;visibility: hidden;border: 0;padding: 0;width: auto;}
-            .PS5 .button.pressed{position: absolute;left: 24px;visibility: visible;}
-            .PS5 .button.pressed.left{left: 14px;}
-            .PS5 .button.pressed.right{left: 34px;}
-            .PS5 .button.pressed.down{top: 30px;}
-            .PS5 .button.pressed.up{top: 10px;}
-            
-            .axes {
-                padding: 1em;visibility: hidden;
-            }
-
-            .buttons {
-                margin-left: 1em;
-            }
-
-            /*meter*/.axis {
-                min-width: 200px;
-                margin: 1em;
-            }
-
-            .other .button {
-                display: inline-block;
-                width: 1em;
-                text-align: center;
-                padding: 1em;
-                border-radius: 20px;
-                border: 1px solid black;
-                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAAxJREFUCNdjYPjPAAACAgEAqiqeJwAAAABJRU5ErkJggg==);
-                background-size: 0% 0%;
-                background-position: 50% 50%;
-                background-repeat: no-repeat;
-            }
-
-            .pressed {
-                border: 1px solid red;
-            }
-
-            .touched::after {
-                content: "touch";
-                display: block;
-                position: absolute;
-                margin-top: -0.2em;
-                margin-left: -0.5em;
-                font-size: 0.8em;
-                opacity: 0.7;
-            }
-            
+            .dataTable tbody tr:hover{background-color: rgba(100,100,100,0.7);cursor: pointer;}
+            td{text-align: center;}
         </style>
     </head>
     <body>
-        <h2 id="start">Press a button on your controller to start</h2>
-        
+        <h1>Mandos Disponibles</h1>
+        <table class="datetable">
+            <thead>
+                <tr>
+                    <th>Mando</th>
+                    <th>Botones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="window.open('PS5White/index.html')">
+                    <td>PS5 Blanco</td>
+                    <td>Blancos</td>
+                </tr>
+                <tr onclick="window.open('PS5Black/index.html')">
+                    <td>PS5 Negro</td>
+                    <td>Negros</td>
+                </tr>
+                <tr onclick="window.open('PS5White2/index.html')">
+                    <td>PS5 Blanco</td>
+                    <td>Negros</td>
+                </tr>
+                <tr onclick="window.open('PS5Black2/index.html')">
+                    <td>PS5 Negro</td>
+                    <td>Blancos</td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            $(document).ready(function () {
+                $(".datetable").DataTable();
+            });
+        </script>
     </body>
 </html>
