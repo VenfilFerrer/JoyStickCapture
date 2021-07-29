@@ -190,62 +190,68 @@ function updateStatus() {
                 var val = ax0.value;
 
                 var style = "opacity:1; ";
-                var desp = val * 50;
+                var desp = val * 20;
 
                 if (val <= "-0.15") {
                     var b = document.getElementById("button10");
                     b.className += " pressed";
-                    style += "left: " + (20 + desp) + "px;";
+                    style += "left: " + (0 + desp) + "px;";
                 } else if (val >= "0.15") {
                     var b = document.getElementById("button10");
                     b.className += " pressed";
-                    style += "left: " + (20 + desp) + "px;";
+                    style += "left: " + (0 + desp) + "px;";
+                }else{
+                    style2 += "left: " + (0) + "px;";
                 }
 
                 var ax1 = document.getElementById("xboxAxis1");
                 var val = ax1.value;
-                var desp2 = val * 50;
+                var desp2 = val * 20;
                 if (val <= "-0.15") {
                     var b = document.getElementById("button10");
                     b.className += " pressed";
-                    style += "top: " + (20 + desp2) + "px;";
+                    style += "top: " + (0 + desp2) + "px;";
                 } else if (val >= "0.15") {
                     var b = document.getElementById("button10");
                     b.className += " pressed";
-                    style += "top: " + (20 + desp2) + "px;";
+                    style += "top: " + (0 + desp2) + "px;";
+                }else{
+                    style2 += "top: " + (0) + "px;";
+                    console.log(val);
                 }
                 b.style = style;
 
                 var ax2 = document.getElementById("xboxAxis2");
                 var val = ax2.value;
                 var style2 = "opacity:1; ";
-                var desp = val * 50;
+                var desp = val * 20;
                 var b2 = document.getElementById("button11");
                 if (val <= "-0.15") {
                     var b = document.getElementById("button11");
                     b.className += " pressed";
-                    style2 += "left: " + (24 + desp) + "px;";
+                    style2 += "left: " + (0 + desp) + "px;";
                 } else if (val >= "0.15") {
                     var b = document.getElementById("button11");
                     b.className += " pressed";
-                    style2 += "left: " + (24 + desp) + "px;";
+                    style2 += "left: " + (0 + desp) + "px;";
                 }else{
+                    style2 += "left: " + (0) + "px;";
                 }
 
                 var ax3 = document.getElementById("xboxAxis3");
                 var val = ax3.value;
-                var desp2 = val * 50;
+                var desp2 = val * 20;
 
                 if (val <= "-0.15") {
                     var b = document.getElementById("button11");
                     b.className += " pressed";
-                    style2 += "top: " + (20 + desp2) + "px;";
+                    style2 += "top: " + (0 + desp2) + "px;";
                 } else if (val >= "0.15") {
                     var b = document.getElementById("button11");
                     b.className += " pressed";
-                    style2 += "top: " + (20 + desp2) + "px;";
+                    style2 += "top: " + (0 + desp2) + "px;";
                 }else{
-                    
+                    style2 += "top: " + (0) + "px;";
                     console.log(val);
                 }
                 b2.style = style2;
